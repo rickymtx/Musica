@@ -1,0 +1,103 @@
+/* Estilos para el Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px 64px;
+    background-color: #000000;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 100;
+    padding: 8px 24px;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: relative;
+    z-index: 1;
+}
+
+.menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media(max-width: 768px) {
+
+    .navbar {
+        padding: 16px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: #424242;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        height: 100vh;
+    }
+
+    #menu-toggle:checked + .menu-icon .line:nth-child(1) {
+        transform: rotate(45deg) translate(15px, 3px);
+    }
+
+    #menu-toggle:checked + .menu-icon .line:nth-child(2) {
+        transform: scale(0);
+    }
+
+    #menu-toggle:checked + .menu-icon .line:nth-child(3) {
+        transform: rotate(-45deg) translate(15px, -4px);
+    }
+}
